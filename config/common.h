@@ -20,7 +20,8 @@ Common definitions.
 #define LAYER_E 4
 #define LAYER_F 5
 #define LAYER_G 6
-#define LAYER_ALL 0 1 2 3 4 5 6
+#define LAYER_H 7
+#define LAYER_ALL 0 1 2 3 4 5 6 7
 
 // #define LAYER_A1 0
 // #define LAYER_A2 1
@@ -64,11 +65,22 @@ ZMK_HOLD_TAP(holdtap_right,
   hold-trigger-key-positions = <_LEFT_HAND>;
 )
 
-ZMK_CAPS_WORD(__caps_us,
-  continue-list = <UNDER MINUS BKSP DEL INS>;
-)
+/ {
+  behaviors {
+    __caps_us: __caps_us {
+      compatible = "zmk,behavior-auto-layer";
+      #binding-cells = <1>;
+      continue-list = <UNDER MINUS BKSP DEL INS>;
+      ignore-alphas;
+    };
+  };
+};
+
+// ZMK_CAPS_WORD(__caps_us,
+//   continue-list = <UNDER MINUS BKSP DEL INS>;
+// )
 // ZMK_CAPS_WORD(__caps_no,
 //   continue-list = <FSLH LS(FSLH) BKSP DEL INS>;
 // )
-ZMK_HOLD_TAP(_caps_us, _hold_tap_args(&mo, &__caps_us))
+ZMK_HOLD_TAP(_caps_us, _hold_tap_args(&mo, &__caps_us LAYER_H))
 // ZMK_HOLD_TAP(_caps_no, _hold_tap_args(&mo, &__caps_no))
