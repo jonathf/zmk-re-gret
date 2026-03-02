@@ -7,13 +7,13 @@
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/34.h"
 
-#define TOP_START_PADDING _ _
-#define TOP_END_PADDING _ _
-#define MIDDLE_START_PADDING _
-#define MIDDLE_END_PADDING _
-#define BOTTOM_START_PADDING _ _
+#define TOP_START_PADDING _
+#define TOP_END_PADDING _
+#define MIDDLE_START_PADDING
+#define MIDDLE_END_PADDING
+#define BOTTOM_START_PADDING _
 #define BOTTOM_MIDDLE_PADDING _ _
-#define BOTTOM_END_PADDING _ _
+#define BOTTOM_END_PADDING _
 #define THUMB_START_PADDING
 #define THUMB_END_PADDING
 
